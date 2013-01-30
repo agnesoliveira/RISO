@@ -657,5 +657,6 @@ if [ $USER == '0' ]; then
 	log "Encerrando RISO -------------------------------------------------------"
 	clear
 else
-	echo 'Só o root pode fazer isso, jovenzinho!'
+	zenity --error --text="Só o root pode fazer isso, jovenzinho!"
+	gksudo riso
 fi
