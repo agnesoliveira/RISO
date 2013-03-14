@@ -59,6 +59,7 @@ carrega_variaveis() {
 
 #Inicia tracker para disponibilizar imagens na rede.
 inicia_servidor() {
+echo "Servidor foi iniciado" #para simples conferencia
 
 	if [ -e ${img_win} -a -e ${img_lin} ]; then
 	    log "Tracker iniciado para Windows e Linux."
@@ -78,6 +79,7 @@ inicia_servidor() {
 
 #Inicia tracker para disponibilizar imagem do Windows na rede.
 inicia_servidor_windows() {
+echo "Servidor do windows foi iniciado" #para simples conferencia
 
 	if [ -e ${img_win} ]; then
     	log "Tracker iniciado para Windows."
@@ -97,6 +99,7 @@ inicia_servidor_windows() {
 
 #Inicia tracker para disponibilizar imagem do Linux na rede.
 inicia_servidor_linux() {
+echo "Servidor do linux foi iniciado" #para simples conferencia
 
 	if [ -e ${img_lin} ]; then
 	    log "Tracker iniciado para Linux."
@@ -116,6 +119,7 @@ inicia_servidor_linux() {
 
 #Cria imagem do Linux.
 cria_linux() {
+echo "Criando a imagem do linux" #para simples conferencia
 
     log "Criando imagem do Linux."
 	echo "Removendo imagem antiga do linux..."
@@ -139,7 +143,8 @@ cria_linux() {
 
 #Cria arquivo .torrent para imagem do linux
 cria_torrent_linux() {
-	
+echo "Criando torrent linux" #para simples conferencia
+
 	if [ -e $img_lin ]; then
 	    log "Criando arquivo torrent do linux."
 	    #Cria o torrent
@@ -162,7 +167,8 @@ cria_torrent_linux() {
 
 #Cria imagem do Windows.
 cria_windows() {
-	
+echo "Criando imagem windows" #para simples conferencia
+
 	log "Criando imagem do Windows."
 	echo "Removendo imagem antiga do windows..."
 	rm -f ${img_win}
@@ -194,7 +200,8 @@ pode estar incorreta.\n" \
 
 #Cria arquivo .torrent para imagem do linux.
 cria_torrent_windows() {
-	
+echo "Criando torrent windows" #para simples conferencia
+
 	if [ -e ${img_win} ]; then
 	    log "Criando arquivo torrent do windows."
         btmakemetafile.bittorrent ${img_win} http://${servidor}:6969/announce 2> /dev/null
